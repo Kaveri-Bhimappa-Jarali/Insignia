@@ -91,7 +91,31 @@ export default function MapContainer({
                     }}
                 />
             ))
-        } 
+        }
+
+        {/* ---------- START MARKER ---------- */}
+
+        {start && (
+          <Marker
+            position={{ lat: start.lat, lng: start.lng }}
+            title="Start"
+            icon={{
+              url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            }}
+          />
+        )}
+
+        {/* ---------- END MARKER ---------- */}
+
+        {end && (
+          <Marker
+            position={{ lat: end.lat, lng: end.lng }}
+            title="End"
+            icon={{
+              url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            }}
+          />
+        )} 
 
         {/* ---------- PATH LINE ---------- */}
 
