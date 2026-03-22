@@ -1,0 +1,34 @@
+[
+  {
+    "id": 201,
+    "type": "node",
+    "name": "Gate Turn",
+    "floor": 0,
+    "lat": 15.430991132210844, 
+    "lng": 75.01297917742667
+  },
+  {
+    "id": 202,
+    "type": "node",
+    "name": "Admin Corner",
+    "floor": 0,
+    "lat": 15.430989839452204,
+    "lng": 75.01447517950396
+  },
+  {
+    "id": 203,
+    "type": "node",
+    "name": "Girls Hostel",
+    "floor": 0,
+    "lat": 15.431065465889692, 
+    "lng": 75.0130670197747
+  },
+  {
+    "id": 204,
+    "type": "node",
+    "name": "Main Junction 1",
+    "floor": 0,
+    "lat": 15.430954934929087, 
+    "lng": 75.01317631979025
+  }
+]

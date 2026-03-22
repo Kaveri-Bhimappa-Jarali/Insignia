@@ -1,0 +1,65 @@
+[
+  {
+    "id": 301,
+    "from": 101,
+    "to": 201,
+    "distance": 15,
+    "direction": "straight",
+    "instruction": "Go straight from gate",
+    "time": 2
+  },
+  {
+    "id": 302,
+    "from": 201,
+    "to": 203,
+    "distance": 3,
+    "direction": "straight",
+    "instruction": "Go straight from gate turn",
+    "time": 1
+  },
+  {
+    "id": 303,
+    "from": 203,
+    "to": 103,
+    "distance": 6,
+    "direction": "straight",
+    "instruction": "Go to Girls Hostel 1",
+    "time": 2
+  },
+  {
+    "id": 304,
+    "from": 203,
+    "to": 102,
+    "distance": 6,
+    "direction": "straight",
+    "instruction": "Go to Girls Hostel 2",
+    "time": 2
+  },
+  {
+    "id": 305,
+    "from": 201,
+    "to": 204,
+    "distance": 5,
+    "direction": "straight",
+    "instruction": "Go to main junction",
+    "time": 1
+  },
+  {
+    "id": 306,
+    "from": 204,
+    "to": 202,
+    "distance": 8,
+    "direction": "straight",
+    "instruction": "Go to admin corner",
+    "time": 3
+  },
+  {
+    "id": 307,
+    "from": 202,
+    "to": 104,
+    "distance": 6,
+    "direction": "stairs",
+    "instruction": "Go up stairs to cafeteria",
+    "time": 2
+  }
+]

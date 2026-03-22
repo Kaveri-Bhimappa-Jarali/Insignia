@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "type": "place",
+    "name": "SDM Main Entrance",
+    "description": "College main gate",
+    "floor": 0,
+    "lat": 15.431261313098682, 
+    "lng": 75.01260992331335
+  },
+  {
+    "id": 102,
+    "type": "place",
+    "name": "Girls Hostel 2",
+    "description": "Girls Hostel",
+    "floor": 0,
+    "lat": 15.431201340411992, 
+    "lng": 75.0134779885397
+  },
+  {
+    "id": 103,
+    "type": "place",
+    "name": "Girls Hostel 1",
+    "description": "Girls hostel",
+    "floor": 0,
+    "lat": 15.43136099603163, 
+    "lng": 75.0132761523082
+  },
+  {
+    "id": 104,
+    "type": "place",
+    "name": "Cafeteria",
+    "description": "College Fast Food",
+    "floor": 0,
+    "lat": 15.43113799523272, 
+    "lng": 75.01439463347182
+  }
+]
