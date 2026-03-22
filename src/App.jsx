@@ -1,9 +1,9 @@
-import CampusMap from "./components/CampusMap";
+import UserMap from "./pages/UserMap";
 
 function App() {
   return (
-    <div>
-      <CampusMap />
+    <div className="h-screen w-screen overflow-hidden">
+      <UserMap />
     </div>
   );
 }
