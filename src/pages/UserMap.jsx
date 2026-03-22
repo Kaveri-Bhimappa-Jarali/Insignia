@@ -33,13 +33,68 @@ export default function UserMap() {
     };
 
     const onReset = () => {
-    setStart(null);
-    setEnd(null);
-    setPath([]);
+        setStart(null);
+        setEnd(null);
+        setPath([]);
+        setPathCoords([]);
+        setPathNames([]);
+        setInstructions([]);
     };
 
     const onUseCurrent = () => {
-    alert("current location later");
+        if (!navigator.geolocation) {
+            alert("Geolocation is not supported by this browser.");
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+
+                // Combine places and nodes for searching
+                const allLocations = [...places, ...nodes];
+
+                let closest = null;
+                let minDist = Infinity;
+
+                allLocations.forEach((loc) => {
+                    // Simple Euclidean distance (suitable for small campus area)
+                    const dist = Math.sqrt(
+                        Math.pow(loc.lat - latitude, 2) + Math.pow(loc.lng - longitude, 2)
+                    );
+                    if (dist < minDist) {
+                        minDist = dist;
+                        closest = loc;
+                    }
+                });
+
+                if (closest) {
+                    setStart(closest);
+                } else {
+                    alert("No nearby location found in the campus data.");
+                }
+            },
+            (error) => {
+                let errorMessage = "Error getting location.";
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        errorMessage = "Location access denied by user.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        errorMessage = "Location information unavailable.";
+                        break;
+                    case error.TIMEOUT:
+                        errorMessage = "Location request timed out.";
+                        break;
+                }
+                alert(errorMessage);
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 300000, // 5 minutes
+            }
+        );
     };
 
     useEffect(() => {
