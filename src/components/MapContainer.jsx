@@ -44,7 +44,7 @@ export default function MapContainer({
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyBbyGcKPOXgopQwd-9s-iBueAoxEYb6YIE">
+    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={campusCenter}
