@@ -98,31 +98,37 @@ function LeftMenu({
 
       {/* PATH DESCRIPTION */}
 
-        <div className="h-40 border-t border-gray-700 p-2 text-sm overflow-auto bg-gray-800">
+        <div className="flex-1 min-h-32 border-t border-gray-700 p-3 text-sm overflow-y-auto bg-gray-800">
 
-            <div className="font-semibold text-white">
-                Route
+            <div className="font-bold text-white text-base mb-3">
+                📍 Route
             </div>
 
             {instructions.length === 0 && (
-                <div className="text-gray-400">
-                No route
+                <div className="text-gray-500 italic py-4">
+                No route selected
                 </div>
             )}
 
-            {instructions.map((s, i) => (
-                <div key={i} className="mb-1 text-white">
-
-                {s.from} → {s.to}
-
-                {s.instruction && (
-                    <div className="text-xs text-gray-400">
-                    {s.instruction}
-                    </div>
-                )}
-
+            {instructions.length > 0 && (
+                <div className="space-y-3">
+                    {instructions.map((s, i) => (
+                        <div key={i} className="bg-gray-700 p-2.5 rounded border-l-4 border-blue-500">
+                            <div className="font-semibold text-white flex items-center gap-2">
+                                <span className="text-blue-400">Step {i + 1}</span>
+                            </div>
+                            <div className="text-gray-200 mt-1">
+                                {s.from} <span className="text-blue-400">→</span> {s.to}
+                            </div>
+                            {s.instruction && (
+                                <div className="text-xs text-gray-400 mt-2 pl-2 border-l border-gray-600">
+                                    {s.instruction}
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
-            ))}
+            )}
 
         </div>
 
