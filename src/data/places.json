@@ -34,5 +34,187 @@
     "floor": 0,
     "lat": 15.43113799523272, 
     "lng": 75.01439463347182
+  },
+  {
+    "id": 105,
+    "type": "place",
+    "name": "Ganapati Temple",
+    "description": "Local Hindu temple",
+    "floor": 0,
+    "lat": 15.430416658399167,
+    "lng": 75.01662496027097
+  },
+  {
+    "id": 106,
+    "type": "place",
+    "name": "SDMCET Back Gate",
+    "description": "College back gate",
+    "floor": 0,
+    "lat": 15.429703051750135, 
+    "lng": 75.01661691364393
+  },
+  {
+    "id": 107,
+    "type": "place",
+    "name": "Mess",
+    "description": "College Fast Food",
+    "floor": 0,
+    "lat": 15.429020469181712, 
+    "lng": 75.01478764709577
+  },
+  {
+    "id": 108,
+    "type": "place",
+    "name": "SDMCET Ground",
+    "description": "College Ground",
+    "floor": 0,
+    "lat": 15.427892932851313, 
+    "lng": 75.01475009616956
+  },
+  {
+    "id": 109,
+    "type": "place",
+    "name": "Boys Hostel",
+    "description": "College Hostel",
+    "floor": 0,
+    "lat": 15.427980841815762, 
+    "lng": 75.01582834419355
+  },
+  {
+    "id": 110,
+    "type": "place",
+    "name": "Boys Hostel2",
+    "description": "College Hostel",
+    "floor": 0,
+    "lat": 15.42846175490355, 
+    "lng": 75.01606706079588
+  },
+  {
+    "id": 111,
+    "type": "place",
+    "name": "Boys Hostel3",
+    "description": "College Hostel",
+    "floor": 0,
+    "lat": 15.428999548865082, 
+    "lng": 75.01582834419355
+  },
+  {
+    "id": 112,
+    "type": "place",
+    "name": "Alumni Block",
+    "description": "College Alumni Block",
+    "floor": 0,
+    "lat": 15.429502978472506, 
+    "lng": 75.01606706079588
+  }
+
+,
+  {
+    "id": 12,
+    "type": "place",
+    "name": "Canteen",
+    "description": "College Good Food",
+    "floor": 0,
+    "lat": 15.430084228029813,
+    "lng": 75.01541528400526
+  },
+  {
+    "id": 13,
+    "type": "place",
+    "name": "Knowledge Tree",
+    "description": "College Knowledge Center",
+    "floor": 0,
+    "lat": 15.430484984953168,
+    "lng": 75.01523825821027
+  },
+  {
+    "id": 14,
+    "type": "place",
+    "name": "Karnataka Bank",
+    "description": "College Karnataka Bank Branch",
+    "floor": 0,
+    "lat": 15.430516011263363,
+    "lng": 75.01499417718992
+  },
+  {
+    "id": 15,
+    "type": "place",
+    "name": "Karnataka Bank ATM",
+    "description": "College Karnataka Bank ATM",
+    "floor": 0,
+    "lat": 15.43112360890317,
+    "lng": 75.01451610324987
+  },
+  {
+    "id": 17,
+    "type": "place",
+    "name": "Admin Block",
+    "description": "College Admin Block",
+    "floor": 0,
+    "lat": 15.430647882549417,
+    "lng": 75.01461531678275
+  },
+  {
+    "id": 18,
+    "type": "place",
+    "name": "CSE Department",
+    "description": "Computer Science and Engineering Department",
+    "floor": 1,
+    "lat": 15.430554803664092,
+    "lng": 75.01448120633201
+  },
+  {
+    "id": 19,
+    "type": "place",
+    "name": "ISE Department",
+    "description": "Information Science and Engineering Department",
+    "floor": 2,
+    "lat": 15.430735790347253,
+    "lng": 75.01413251916007
+  },
+  {
+    "id": 20,
+    "type": "place",
+    "name": "ECE Department",
+    "description": "Electronics and Communication Engineering Department",
+    "floor": 1,
+    "lat": 15.430813356020302,
+    "lng": 75.01368995467261
+  },
+  {
+    "id": 21,
+    "type": "place",
+    "name": "Library",
+    "description": "College Library",
+    "floor": 1,
+    "lat": 15.430231612765962,
+    "lng": 75.01417007008628
+  },
+  {
+    "id": 22,
+    "type": "place",
+    "name": "Placement Office",
+    "description": "College Placement Office",
+    "floor": 0,
+    "lat": 15.430249711469548,
+    "lng": 75.01422371426658
+  },
+  {
+    "id": 23,
+    "type": "place",
+    "name": "MBA Department",
+    "description": "Master of Business Administration Department",
+    "floor": 2,
+    "lat": 15.430179902175558,
+    "lng": 75.01414861241416
+  },
+  {
+    "id": 24,
+    "type": "place",
+    "name": "Chemical Department",
+    "description": "Chemical Engineering Department",
+    "floor": 2,
+    "lat": 15.430280737814906,
+    "lng": 75.01479502478675
   }
 ]
