@@ -38,43 +38,47 @@ export function pathToNames(path, places, nodes) {
 
 
 // ---------- INSTRUCTIONS ----------
-
 export function pathToInstructions(
   path,
   edges,
   places,
   nodes
 ) {
+
   const result = [];
 
-  const getPoint = (id) =>
-    places.find((p) => p.id == id) ||
-    nodes.find((n) => n.id == id);
+  if (!path || path.length < 2) return result;
+
+  const getName = (id) => {
+
+    id = Number(id);
+
+    const p =
+      places.find(x => Number(x.id) === id) ||
+      nodes.find(x => Number(x.id) === id);
+
+    return p ? p.name : id;
+
+  };
+
 
   for (let i = 0; i < path.length - 1; i++) {
-    const a = path[i];
-    const b = path[i + 1];
+
+    const a = Number(path[i]);
+    const b = Number(path[i + 1]);
 
     const edge = edges.find(
-      (e) =>
-        (e.from == a && e.to == b) ||
-        (e.from == b && e.to == a)
+      e =>
+        (Number(e.from) === a && Number(e.to) === b) ||
+        (Number(e.from) === b && Number(e.to) === a)
     );
 
-    const A = getPoint(a);
-    const B = getPoint(b);
+    result.push({
+      from: getName(a),
+      to: getName(b),
+      instruction: edge?.instruction || "",
+    });
 
-    let text = `${A?.name || a} → ${B?.name || b}`;
-
-    if (edge?.instruction) {
-      text += " | " + edge.instruction;
-    }
-
-    if (A?.floor !== B?.floor) {
-      text += ` (Floor ${A?.floor} → ${B?.floor})`;
-    }
-
-    result.push(text);
   }
 
   return result;
