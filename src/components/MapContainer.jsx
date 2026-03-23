@@ -3,6 +3,7 @@ import {
   LoadScript,
   Marker,
   Polyline,
+  InfoWindow,
 } from "@react-google-maps/api";
 
 import { campusCenter, campusBounds } from "../config/mapBounds";
@@ -47,6 +48,7 @@ export default function MapContainer({
   const [animatedPosition, setAnimatedPosition] = useState(null);
   const [direction, setDirection] = useState(0); // Track direction for rotation
   const [showPath, setShowPath] = useState(false); // Track if path should be shown
+  const [selectedPlace, setSelectedPlace] = useState(null); // Track which place info is shown
 
   // Animate marker along path
   useEffect(() => {
@@ -129,17 +131,40 @@ export default function MapContainer({
         {/* ---------- PLACES ---------- */}
 
         {places.map((p) => (
-            <Marker
-                key={p.id}
-                position={{ lat: p.lat, lng: p.lng }}
-                onClick={() => {
-                if (adminMode && onMarkerClick) {
-                    onMarkerClick(p.id);
-                } else {
-                    handleMarkerClick(p);
-                }
-                }}
-            />
+            <div key={p.id}>
+                <Marker
+                    position={{ lat: p.lat, lng: p.lng }}
+                    title={p.name}
+                    onClick={() => {
+                        setSelectedPlace(p.id);
+                        if (adminMode && onMarkerClick) {
+                            onMarkerClick(p.id);
+                        } else {
+                            handleMarkerClick(p);
+                        }
+                    }}
+                />
+                {selectedPlace === p.id && (
+                  <InfoWindow
+                    position={{ lat: p.lat, lng: p.lng }}
+                    onCloseClick={() => setSelectedPlace(null)}
+                  >
+                    <div className="bg-gray-800 text-white p-3 rounded shadow-lg" style={{ maxWidth: '200px' }}>
+                      <h3 className="font-bold text-blue-400 mb-2">{p.name}</h3>
+                      {p.description && (
+                        <p className="text-sm text-gray-300 mb-2">
+                          📍 {p.description}
+                        </p>
+                      )}
+                      {p.floor !== undefined && (
+                        <p className="text-sm text-gray-400">
+                          🏢 Floor {p.floor}
+                        </p>
+                      )}
+                    </div>
+                  </InfoWindow>
+                )}
+            </div>
         ))}
 
         {/* ---------- NODES (only visible when path OR admin) ---------- */}
@@ -210,7 +235,7 @@ export default function MapContainer({
 
         {/* ---------- PATH POINTS ---------- */}
 
-        {pathCoords && pathCoords.length > 0 && pathCoords.map((p, i) => (
+        {showPath && pathCoords.map((p, i) => (
           <Marker
             key={"path" + i}
             position={{ lat: p.lat, lng: p.lng }}
