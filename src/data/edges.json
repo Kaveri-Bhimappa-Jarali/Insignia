@@ -1,6 +1,6 @@
 [
   {
-    "id": 301,
+    "id": 326,
     "from": 101,
     "to": 201,
     "distance": 15,
@@ -9,7 +9,7 @@
     "time": 2
   },
   {
-    "id": 302,
+    "id": 327,
     "from": 201,
     "to": 203,
     "distance": 3,
@@ -18,7 +18,7 @@
     "time": 1
   },
   {
-    "id": 303,
+    "id": 328,
     "from": 203,
     "to": 103,
     "distance": 6,
@@ -27,7 +27,7 @@
     "time": 2
   },
   {
-    "id": 304,
+    "id": 329,
     "from": 203,
     "to": 102,
     "distance": 6,
@@ -36,7 +36,7 @@
     "time": 2
   },
   {
-    "id": 305,
+    "id": 330,
     "from": 201,
     "to": 204,
     "distance": 5,
@@ -45,7 +45,7 @@
     "time": 1
   },
   {
-    "id": 306,
+    "id": 331,
     "from": 204,
     "to": 202,
     "distance": 8,
@@ -54,12 +54,219 @@
     "time": 3
   },
   {
-    "id": 307,
+    "id": 332,
     "from": 202,
     "to": 104,
     "distance": 6,
     "direction": "stairs",
     "instruction": "Go up stairs to cafeteria",
     "time": 2
+  },
+  {
+      "id": 301,
+      "from": 101,
+      "to": 201,
+      "distance": 15,
+      "direction": "straight",
+      "instruction": "Go straight from gate",
+      "time": 2
+  },
+  {
+      "id": 302,
+      "from": 201,
+      "to": 203,
+      "distance": 3,
+      "direction": "straight",
+      "instruction": "Go straight from gate turn",
+      "time": 1
+  },
+  {
+      "id": 303,
+      "from": 203,
+      "to": 103,
+      "distance": 6,
+      "direction": "straight",
+      "instruction": "Go to Girls Hostel 1",
+      "time": 2
+  },
+  {
+      "id": 304,
+      "from": 203,
+      "to": 102,
+      "distance": 6,
+      "direction": "straight",
+      "instruction": "Go to Girls Hostel 2",
+      "time": 2
+  },
+  {
+      "id": 305,
+      "from": 201,
+      "to": 204,
+      "distance": 5,
+      "direction": "straight",
+      "instruction": "Go to main junction",
+      "time": 1
+  },
+  {
+      "id": 306,
+      "from": 204,
+      "to": 202,
+      "distance": 8,
+      "direction": "straight",
+      "instruction": "Go to admin corner",
+      "time": 3
+  },
+  {
+      "id": 307,
+      "from": 202,
+      "to": 104,
+      "distance": 6,
+      "direction": "stairs",
+      "instruction": "Go up stairs to cafeteria",
+      "time": 2
+  },
+  {
+      "id": 308,
+      "from": 116,
+      "to": 202,
+      "distance": 15,
+      "instruction": "Go Up Stares ",
+      "time": 3
+  },
+  {
+      "id": 309,
+      "from": 202,
+      "to": 224,
+      "distance": 50,
+      "instruction": "go straight",
+      "time": 5
+  },
+  {
+      "id": 310,
+      "from": 224,
+      "to": 223,
+      "distance": 10,
+      "instruction": "straight",
+      "time": 1
+  },
+  {
+      "id": 311,
+      "from": 223,
+      "to": 222,
+      "distance": 15,
+      "instruction": "straight",
+      "time": 2
+  },
+  {
+      "id": 312,
+      "from": 223,
+      "to": 220,
+      "distance": 75,
+      "instruction": "straight",
+      "time": 3
+  },
+  {
+      "id": 313,
+      "from": 220,
+      "to": 217,
+      "distance": 15,
+      "instruction": "straight",
+      "time": 1
+  },
+  {
+      "id": 314,
+      "from": 217,
+      "to": 218,
+      "distance": 10,
+      "instruction": "straight",
+      "time": 2
+  },
+  {
+      "id": 315,
+      "from": 218,
+      "to": 219,
+      "distance": 30,
+      "instruction": "Straight",
+      "time": 3
+  },
+  {
+      "id": 316,
+      "from": 220,
+      "to": 216,
+      "distance": 70,
+      "instruction": "straight",
+      "time": 5
+  },
+  {
+      "id": 317,
+      "from": 216,
+      "to": 227,
+      "distance": 60,
+      "instruction": "straight",
+      "time": 3
+  },
+  {
+      "id": 318,
+      "from": 227,
+      "to": 226,
+      "distance": 20,
+      "instruction": "straight",
+      "time": 2
+  },
+  {
+      "id": 319,
+      "from": 226,
+      "to": 225,
+      "distance": 35,
+      "instruction": "straight",
+      "time": 3
+  },
+  {
+      "id": 320,
+      "from": 225,
+      "to": 232,
+      "distance": 15,
+      "instruction": "straight",
+      "time": 1
+  },
+  {
+      "id": 321,
+      "from": 216,
+      "to": 232,
+      "distance": 85,
+      "instruction": "straight",
+      "time": 3
+  },
+  {
+      "id": 322,
+      "from": 231,
+      "to": 232,
+      "distance": 15,
+      "instruction": "straight",
+      "time": 2
+  },
+  {
+      "id": 323,
+      "from": 231,
+      "to": 221,
+      "distance": 10,
+      "instruction": "straight",
+      "time": 1
+  },
+  {
+      "id": 324,
+      "from": 221,
+      "to": 114,
+      "distance": 10,
+      "instruction": "straight",
+      "time": 1
+  },
+  {
+      "id": 325,
+      "from": 232,
+      "to": 113,
+      "distance": 5,
+      "instruction": "Straight",
+      "time": 1
   }
 ]
