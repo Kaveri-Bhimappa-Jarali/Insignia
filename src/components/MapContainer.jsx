@@ -42,8 +42,6 @@ export default function MapContainer({
   setStart,
   setEnd,
   pathCoords = [],
-  adminMode = false,
-  onMapClick,
 }) {
   const [animatedPosition, setAnimatedPosition] = useState(null);
   const [direction, setDirection] = useState(0); // Track direction for rotation
@@ -101,8 +99,6 @@ export default function MapContainer({
   }, [pathCoords]);
 
   const handleMarkerClick = (place) => {
-    if (adminMode) return;
-
     if (!start) {
       setStart(place);
     } else if (!end) {
@@ -117,16 +113,6 @@ export default function MapContainer({
         center={campusCenter}
         zoom={17}
         options={options}
-        onClick={(e) => {
-          if (!adminMode) return;
-
-          const lat = e.latLng.lat();
-          const lng = e.latLng.lng();
-
-          if (onMapClick) {
-            onMapClick(lat, lng);
-          }
-        }}
       >
         {/* ---------- PLACES ---------- */}
 
@@ -137,11 +123,7 @@ export default function MapContainer({
                     title={p.name}
                     onClick={() => {
                         setSelectedPlace(p.id);
-                        if (adminMode && onMarkerClick) {
-                            onMarkerClick(p.id);
-                        } else {
-                            handleMarkerClick(p);
-                        }
+                        handleMarkerClick(p);
                     }}
                 />
                 {selectedPlace === p.id && (
@@ -169,16 +151,11 @@ export default function MapContainer({
 
         {/* ---------- NODES (only visible when path OR admin) ---------- */}
 
-        {(adminMode || showPath) &&
+        {showPath &&
             nodes.map((n) => (
                 <Marker
                     key={n.id}
                     position={{ lat: n.lat, lng: n.lng }}
-                    onClick={() => {
-                    if (adminMode && onMarkerClick) {
-                        onMarkerClick(n.id);
-                    }
-                    }}
                 />
             ))
         }
