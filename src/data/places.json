@@ -106,11 +106,9 @@
     "floor": 0,
     "lat": 15.429502978472506, 
     "lng": 75.01606706079588
-  }
-
-,
+  },
   {
-    "id": 12,
+    "id": 113,
     "type": "place",
     "name": "Canteen",
     "description": "College Good Food",
@@ -119,7 +117,7 @@
     "lng": 75.01541528400526
   },
   {
-    "id": 13,
+    "id": 114,
     "type": "place",
     "name": "Knowledge Tree",
     "description": "College Knowledge Center",
@@ -128,7 +126,7 @@
     "lng": 75.01523825821027
   },
   {
-    "id": 14,
+    "id": 115,
     "type": "place",
     "name": "Karnataka Bank",
     "description": "College Karnataka Bank Branch",
@@ -137,7 +135,7 @@
     "lng": 75.01499417718992
   },
   {
-    "id": 15,
+    "id": 116,
     "type": "place",
     "name": "Karnataka Bank ATM",
     "description": "College Karnataka Bank ATM",
@@ -146,7 +144,7 @@
     "lng": 75.01451610324987
   },
   {
-    "id": 17,
+    "id": 117,
     "type": "place",
     "name": "Admin Block",
     "description": "College Admin Block",
@@ -155,7 +153,7 @@
     "lng": 75.01461531678275
   },
   {
-    "id": 18,
+    "id": 118,
     "type": "place",
     "name": "CSE Department",
     "description": "Computer Science and Engineering Department",
@@ -164,7 +162,7 @@
     "lng": 75.01448120633201
   },
   {
-    "id": 19,
+    "id": 119,
     "type": "place",
     "name": "ISE Department",
     "description": "Information Science and Engineering Department",
@@ -173,7 +171,7 @@
     "lng": 75.01413251916007
   },
   {
-    "id": 20,
+    "id": 120,
     "type": "place",
     "name": "ECE Department",
     "description": "Electronics and Communication Engineering Department",
@@ -182,7 +180,7 @@
     "lng": 75.01368995467261
   },
   {
-    "id": 21,
+    "id": 121,
     "type": "place",
     "name": "Library",
     "description": "College Library",
@@ -191,7 +189,7 @@
     "lng": 75.01417007008628
   },
   {
-    "id": 22,
+    "id": 122,
     "type": "place",
     "name": "Placement Office",
     "description": "College Placement Office",
@@ -200,7 +198,7 @@
     "lng": 75.01422371426658
   },
   {
-    "id": 23,
+    "id": 123,
     "type": "place",
     "name": "MBA Department",
     "description": "Master of Business Administration Department",
@@ -209,12 +207,192 @@
     "lng": 75.01414861241416
   },
   {
-    "id": 24,
+    "id": 124,
     "type": "place",
     "name": "Chemical Department",
     "description": "Chemical Engineering Department",
     "floor": 2,
     "lat": 15.430280737814906,
     "lng": 75.01479502478675
+  },
+  {
+    "id": 125,
+    "type": "place",
+    "name": "Transportation Section",
+    "description": "Transportation Details Room",
+    "floor": 0,
+    "lat": 15.4305855929,
+    "lng": 75.0156208618
+  },
+  {
+    "id": 126,
+    "type": "place",
+    "name": "Karavali",
+    "description": "Snacks Shop",
+    "floor": 0,
+    "lat": 15.4305855929,
+    "lng": 75.0157201036
+  },
+  {
+    "id": 127,
+    "type": "place",
+    "name": "Xerox Shop",
+    "description": "Print Shop",
+    "floor": 0,
+    "lat": 15.430595935,
+    "lng": 75.0157804533
+  },
+  {
+    "id": 128,
+    "type": "place",
+    "name": "HOD Parking",
+    "description": "4 wheeler parking",
+    "floor": 0,
+    "lat": 15.4309294494,
+    "lng": 75.015240096
+  },
+  {
+    "id": 129,
+    "type": "place",
+    "name": "Student 2W Parking",
+    "description": "Student parking",
+    "floor": 0,
+    "lat": 15.4310057223,
+    "lng": 75.0151824285
+  },
+  {
+    "id": 130,
+    "type": "place",
+    "name": "Student Parking",
+    "description": "Parking",
+    "floor": 0,
+    "lat": 15.431071653,
+    "lng": 75.0149866272
+  },
+  {
+    "id": 131,
+    "type": "place",
+    "name": "Faculty Parking",
+    "description": "Faculty parking",
+    "floor": 0,
+    "lat": 15.4303265969,
+    "lng": 75.0149973924
+  },
+  {
+    "id": 132,
+    "type": "place",
+    "name": "Post Office",
+    "description": "Indian Post",
+    "floor": 0,
+    "lat": 15.4305862827,
+    "lng": 75.0149609988
+  },
+  {
+    "id": 133,
+    "type": "place",
+    "name": "Examination Section",
+    "description": "Exam Section",
+    "floor": 1,
+    "lat": 15.4305216445,
+    "lng": 75.0150387829
+  }
+  {
+      "id": 3,
+      "type": "place",
+      "name": "Transportation Section",
+      "description": "Transportation Details Room",
+      "floor": 0,
+      "lat": 15.4305855929,
+      "lng": 75.0156208618
+  },
+  {
+      "id": 4,
+      "type": "place",
+      "name": "Karavali",
+      "description": "All Snacks Item Shop",
+      "floor": 0,
+      "lat": 15.4305855929,
+      "lng": 75.0157201036
+  },
+  {
+      "id": 5,
+      "type": "place",
+      "name": "Xerox Shop",
+      "description": "Xerox and Print Shop",
+      "floor": 0,
+      "lat": 15.430595935,
+      "lng": 75.0157804533
+  },
+  {
+      "id": 6,
+      "type": "place",
+      "name": "Knowledge Tree",
+      "description": "SDMCET Main Tree",
+      "floor": 0,
+      "lat": 15.4304821719,
+      "lng": 75.0152453526
+  },
+  {
+      "id": 7,
+      "type": "place",
+      "name": "HOD's 4 wheeler Parking",
+      "description": "4 wheeler Parking",
+      "floor": 0,
+      "lat": 15.4309294494,
+      "lng": 75.015240096
+  },
+  {
+      "id": 8,
+      "type": "place",
+      "name": "Student 2 wheeler Parking",
+      "description": "General 2 wheeler Parking",
+      "floor": 0,
+      "lat": 15.4310057223,
+      "lng": 75.0151824285
+  },
+  {
+      "id": 9,
+      "type": "place",
+      "name": "Student Parking",
+      "description": "2 Wheeler Parking",
+      "floor": 0,
+      "lat": 15.431071653,
+      "lng": 75.0149866272
+  },
+  {
+      "id": 10,
+      "type": "place",
+      "name": "Ganapati Temple Main Entrance",
+      "description": "Temple Main Entrance",
+      "floor": 0,
+      "lat": 15.430371311,
+      "lng": 75.016125407
+  },
+  {
+      "id": 11,
+      "type": "place",
+      "name": "Faculty Parking",
+      "description": "All Faculty Parking",
+      "floor": 0,
+      "lat": 15.4303265969,
+      "lng": 75.0149973924
+  },
+  {
+      "id": 12,
+      "type": "place",
+      "name": "Post Offices",
+      "description": "Indian Post SDMCET",
+      "floor": 0,
+      "lat": 15.4305862827,
+      "lng": 75.0149609988
+  },
+  {
+      "id": 14,
+      "type": "place",
+      "name": "Examination Section",
+      "description": "Main Exam Section",
+      "floor": 1,
+      "lat": 15.4305216445,
+      "lng": 75.0150387829
   }
 ]
