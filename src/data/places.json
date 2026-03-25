@@ -295,7 +295,7 @@
     "floor": 1,
     "lat": 15.4305216445,
     "lng": 75.0150387829
-  }
+  },
   {
       "id": 3,
       "type": "place",
@@ -322,15 +322,6 @@
       "floor": 0,
       "lat": 15.430595935,
       "lng": 75.0157804533
-  },
-  {
-      "id": 6,
-      "type": "place",
-      "name": "Knowledge Tree",
-      "description": "SDMCET Main Tree",
-      "floor": 0,
-      "lat": 15.4304821719,
-      "lng": 75.0152453526
   },
   {
       "id": 7,
