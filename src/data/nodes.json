@@ -40,76 +40,12 @@
     "lng": 75.0156049757
   },
   {
-    "id": 206,
-    "type": "node",
-    "name": "Karavali Corner",
-    "floor": 0,
-    "lat": 15.4305222475,
-    "lng": 75.015520279
-  },
-  {
-    "id": 207,
-    "type": "node",
-    "name": "4 wheeler Parking Corner",
-    "floor": 0,
-    "lat": 15.4306683297,
-    "lng": 75.0153620287
-  },
-  {
-    "id": 208,
-    "type": "node",
-    "name": "People Tree",
-    "floor": 0,
-    "lat": 15.4307536519,
-    "lng": 75.0154116495
-  },
-  {
     "id": 209,
     "type": "node",
     "name": "HOD's Parking Node",
     "floor": 0,
     "lat": 15.4308803425,
     "lng": 75.0152842446
-  },
-  {
-    "id": 210,
-    "type": "node",
-    "name": "Admin Entrance - 2",
-    "floor": 0,
-    "lat": 15.4307303822,
-    "lng": 75.0151729329
-  },
-  {
-    "id": 211,
-    "type": "node",
-    "name": "Knowledge Tree Entrance ",
-    "floor": 0,
-    "lat": 15.430301185,
-    "lng": 75.0152735158
-  },
-  {
-    "id": 212,
-    "type": "node",
-    "name": "2 Wheeler Parking ",
-    "floor": 0,
-    "lat": 15.4310096006,
-    "lng": 75.0150751401
-  },
-  {
-    "id": 213,
-    "type": "node",
-    "name": "Parking Entrance 2",
-    "floor": 0,
-    "lat": 15.4309759888,
-    "lng": 75.0149799217
-  },
-  {
-    "id": 214,
-    "type": "node",
-    "name": "Parking Entrance",
-    "floor": 0,
-    "lat": 15.4310251137,
-    "lng": 75.0149222542
   },
   {
     "id": 215,
@@ -146,15 +82,6 @@
     "floor": 0,
     "lat": 15.4307536519,
     "lng": 75.0154116495
-  },
-  {
-    "id": 219,
-    "type": "node",
-    "name": "HOD's Parking Node",
-    "description": "",
-    "floor": 0,
-    "lat": 15.4308803425,
-    "lng": 75.0152842446
   },
   {
     "id": 220,
@@ -211,24 +138,6 @@
     "lng": 75.0156037174
   },
   {
-    "id": 226,
-    "type": "node",
-    "name": "Temple Entrance",
-    "description": "",
-    "floor": 0,
-    "lat": 15.4302536695,
-    "lng": 75.0160851739
-  },
-  {
-    "id": 227,
-    "type": "node",
-    "name": "Temple Entrance ",
-    "description": "",
-    "floor": 0,
-    "lat": 15.430486367,
-    "lng": 75.0160503052
-  },
-  {
     "id": 228,
     "type": "node",
     "name": "Main Temple Entrance",
@@ -283,96 +192,6 @@
       "lng": 75.0156049757
   },
   {
-      "id": 2,
-      "type": "node",
-      "name": "Karavali Corner",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4305222475,
-      "lng": 75.015520279
-  },
-  {
-      "id": 3,
-      "type": "node",
-      "name": "4 wheeler Parking Corner",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4306683297,
-      "lng": 75.0153620287
-  },
-  {
-      "id": 4,
-      "type": "node",
-      "name": "People Tree",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4307536519,
-      "lng": 75.0154116495
-  },
-  {
-      "id": 5,
-      "type": "node",
-      "name": "HOD's Parking Node",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4308803425,
-      "lng": 75.0152842446
-  },
-  {
-      "id": 6,
-      "type": "node",
-      "name": "Admin Entrance - 2",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4307303822,
-      "lng": 75.0151729329
-  },
-  {
-      "id": 7,
-      "type": "node",
-      "name": "Knowledge Tree Entrance ",
-      "description": "",
-      "floor": 0,
-      "lat": 15.430301185,
-      "lng": 75.0152735158
-  },
-  {
-      "id": 8,
-      "type": "node",
-      "name": "2 Wheeler Parking ",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4310096006,
-      "lng": 75.0150751401
-  },
-  {
-      "id": 9,
-      "type": "node",
-      "name": "Parking Entrance 2",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4309759888,
-      "lng": 75.0149799217
-  },
-  {
-      "id": 10,
-      "type": "node",
-      "name": "Parking Entrance",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4310251137,
-      "lng": 75.0149222542
-  },
-  {
-      "id": 11,
-      "type": "node",
-      "name": "Ganapati Temple Cross",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4302135938,
-      "lng": 75.0156037174
-  },
-  {
       "id": 498,
       "type": "node",
       "name": "Temple Entrance",
@@ -416,24 +235,6 @@
       "floor": 0,
       "lat": 15.430256255,
       "lng": 75.0165518782
-  },
-  {
-      "id": 17,
-      "type": "node",
-      "name": "Incubation Cross",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4301943164,
-      "lng": 75.0152931165
-  },
-  {
-      "id": 18,
-      "type": "node",
-      "name": "Canteen Entrance",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4301645828,
-      "lng": 75.0154486846
   },
   {
       "id": 19,

@@ -243,15 +243,6 @@
     "lng": 75.0157804533
   },
   {
-    "id": 128,
-    "type": "place",
-    "name": "HOD Parking",
-    "description": "4 wheeler parking",
-    "floor": 0,
-    "lat": 15.4309294494,
-    "lng": 75.015240096
-  },
-  {
     "id": 129,
     "type": "place",
     "name": "Student 2W Parking",
@@ -304,15 +295,6 @@
       "floor": 0,
       "lat": 15.4305855929,
       "lng": 75.0156208618
-  },
-  {
-      "id": 4,
-      "type": "place",
-      "name": "Karavali",
-      "description": "All Snacks Item Shop",
-      "floor": 0,
-      "lat": 15.4305855929,
-      "lng": 75.0157201036
   },
   {
       "id": 5,

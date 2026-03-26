@@ -207,8 +207,8 @@
   },
   {
       "id": 318,
-      "from": 227,
-      "to": 226,
+      "from": 499,
+      "to": 498,
       "distance": 20,
       "instruction": "straight",
       "time": 2
@@ -287,7 +287,7 @@
     },
     {
         "id": 335,
-        "from": 6,
+        "from": 220,
         "to": 21,
         "distance": 15,
         "instruction": "Straight Down",
@@ -343,7 +343,7 @@
     },
     {
         "id": 342,
-        "from": 2,
+        "from": 216,
         "to": 3,
         "distance": 5,
         "instruction": "Straight",
@@ -407,9 +407,140 @@
     "id": 349,
     "from": 103,
     "to": 102,
-    "distance": 20,
+    "distance": 8,
     "direction": "Strsight",
     "instruction": "Left Hostel",
     "time": 2
+    },
+    {
+    "id": 350,
+    "from": 116,
+    "to": 104,
+    "distance": 2,
+    "direction": "Straight",
+    "time": 0
+    },
+    {
+    "id": 351,
+    "from": 209,
+    "to": 7,
+    "distance": 5,
+    "direction": "Straight",
+    "instruction": "Slow Down",
+    "time": 0
+    },
+    {
+        "id": 352,
+        "from": 218,
+        "to": 209,
+        "distance": 10,
+        "direction": "Straight",
+        "instruction": "Take Slow",
+        "time": 1
+    },
+    {
+        "id": 353,
+        "from": 24,
+        "to": 221,
+        "distance": 10,
+        "direction": "Straight",
+        "time": 1
+    },
+    {
+    "id": 354,
+    "from": 222,
+    "to": 8,
+    "distance": 5,
+    "direction": "Straight",
+    "time": 1
+    },
+    {
+        "id": 355,
+        "from": 221,
+        "to": 216,
+        "distance": 35,
+        "direction": "Straight",
+        "time": 1
+    },
+    {
+    "id": 356,
+    "from": 216,
+    "to": 126,
+    "distance": 15,
+    "direction": "Straight",
+    "time": 1
+    },
+    {
+    "id": 357,
+    "from": 216,
+    "to": 5,
+    "distance": 18,
+    "direction": "Straight",
+    "time": 1
+    },
+    {
+    "id": 358,
+    "from": 3,
+    "to": 126,
+    "distance": 5,
+    "direction": "Side",
+    "time": 0
+    },
+    {
+    "id": 359,
+    "from": 126,
+    "to": 5,
+    "distance": 5,
+    "direction": "Side",
+    "time": 0
+    },
+    {
+    "id": 360,
+    "from": 5,
+    "to": 499,
+    "distance": 25,
+    "direction": "Straight",
+    "time": 1
+    },
+    {
+    "id": 361,
+    "from": 126,
+    "to": 499,
+    "distance": 30,
+    "direction": "Straight side",
+    "time": 1
+    },
+    {
+    "id": 362,
+    "from": 3,
+    "to": 499,
+    "distance": 40,
+    "direction": "Straight",
+    "time": 1
+    },
+    {
+    "id": 363,
+    "from": 225,
+    "to": 498,
+    "distance": 80,
+    "direction": "Straight",
+    "time": 2
+    },
+    {
+    "id": 364,
+    "from": 498,
+    "to": 501,
+    "distance": 40,
+    "direction": "Straight",
+    "time": 1
+    },
+    {
+    "id": 365,
+    "from": 498,
+    "to": 503,
+    "distance": 45,
+    "direction": "Straight",
+    "time": 1
     }
+
 ]
