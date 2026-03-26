@@ -9,6 +9,9 @@ import {
 
 import { campusCenter, campusBounds } from "../config/mapBounds";
 
+import { buildGraph } from "../graph/buildGraph";
+import { dijkstra } from "../graph/dijkstra";
+
 import placesData from "../data/places.json";
 import nodesData from "../data/nodes.json";
 import edgesData from "../data/edges.json";
@@ -55,6 +58,10 @@ export default function AdminEdgeEditor() {
   const [showEdgeForm, setShowEdgeForm] = useState(false);
 
   const allPoints = [...placesState, ...nodesState];
+  const [selectedEdge, setSelectedEdge] = useState(null);
+
+  const [checkResult, setCheckResult] = useState(null);
+  const [checkPath, setCheckPath] = useState([]);
 
 
   // ---------- save edges ----------
@@ -140,6 +147,40 @@ export default function AdminEdgeEditor() {
     setEdgeForm({});
   };
 
+  const handleCheckPath = () => {
+
+    if (selectedPoints.length !== 2) return;
+
+    const graph = buildGraph(
+      placesState,
+      nodesState,
+      edgesState
+    );
+
+    const startId = selectedPoints[0].id;
+    const endId = selectedPoints[1].id;
+
+    const result = dijkstra(
+      graph,
+      startId,
+      endId
+    );
+
+    if (!result || result.length === 0) {
+
+      setCheckResult("NO PATH");
+
+      setCheckPath([]);
+
+      return;
+
+    }
+
+    setCheckResult("PATH FOUND");
+
+    setCheckPath(result);
+
+  };
 
   // ---------- export ----------
 
@@ -155,7 +196,6 @@ export default function AdminEdgeEditor() {
 
     alert("Edges copied");
   };
-
 
   // ================= UI =================
 
@@ -218,6 +258,46 @@ export default function AdminEdgeEditor() {
 
         </div>
 
+          {selectedEdge && (
+
+            <div
+              style={{
+                marginTop: 10,
+                padding: 8,
+                background: "#333",
+              }}
+            >
+
+              <b>Selected Edge</b>
+
+              <div>ID: {selectedEdge.id}</div>
+
+              <div>
+                From: {selectedEdge.from}
+              </div>
+
+              <div>
+                To: {selectedEdge.to}
+              </div>
+
+              <div>
+                Distance:
+                {selectedEdge.distance}
+              </div>
+
+              <div>
+                Time:
+                {selectedEdge.time}
+              </div>
+
+              <div>
+                Instruction:
+                {selectedEdge.instruction}
+              </div>
+
+            </div>
+
+          )}
 
         <button onClick={exportEdges}>
           Export
@@ -309,14 +389,29 @@ export default function AdminEdgeEditor() {
 
               return (
 
-                <Polyline
-                  key={e.id}
-                  path={[a, b]}
-                  options={{
-                    strokeColor: "#00ff00",
-                  }}
-                />
-                );
+                  <Polyline
+                    key={e.id}
+                    path={[a, b]}
+
+                    options={{
+                      strokeColor:
+                        selectedEdge?.id === e.id
+                          ? "#ff0000"
+                          : "#00ff00",
+
+                      strokeWeight:
+                        selectedEdge?.id === e.id
+                          ? 6
+                          : 3,
+                    }}
+
+                    onClick={() => {
+                      setSelectedEdge(e);
+                    }}
+
+                  />
+
+              );
 
             })}
 
