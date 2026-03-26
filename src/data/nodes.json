@@ -373,7 +373,7 @@
       "lng": 75.0156037174
   },
   {
-      "id": 12,
+      "id": 498,
       "type": "node",
       "name": "Temple Entrance",
       "description": "",
@@ -382,7 +382,7 @@
       "lng": 75.0160851739
   },
   {
-      "id": 13,
+      "id": 499,
       "type": "node",
       "name": "Temple Entrance ",
       "description": "",
@@ -391,7 +391,7 @@
       "lng": 75.0160503052
   },
   {
-      "id": 14,
+      "id": 500,
       "type": "node",
       "name": "Main Temple Entrance",
       "description": "",
@@ -400,7 +400,7 @@
       "lng": 75.016484823
   },
   {
-      "id": 15,
+      "id": 501,
       "type": "node",
       "name": "Temple Exit",
       "description": "",
@@ -409,7 +409,7 @@
       "lng": 75.0164794586
   },
   {
-      "id": 16,
+      "id": 503,
       "type": "node",
       "name": "Back Gate Corner",
       "description": "",
@@ -472,12 +472,21 @@
       "lng": 75.0149114999
   },
   {
-      "id": 23,
-      "type": "node",
-      "name": "Cooparative Shop",
-      "description": "",
-      "floor": 0,
-      "lat": 15.4304497591,
-      "lng": 75.0149798962
+  "id": 23,
+  "type": "node",
+  "name": "Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4306743204,
+  "lng": 75.0150881753
+  },
+  {
+  "id": 24,
+  "type": "node",
+  "name": "Knowledge Tree Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4303338927,
+  "lng": 75.0151328787
   }
 ]

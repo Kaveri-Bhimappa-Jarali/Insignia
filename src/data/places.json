@@ -385,5 +385,14 @@
       "floor": 1,
       "lat": 15.4305216445,
       "lng": 75.0150387829
+  },
+  {
+      "id": 15,
+      "type": "place",
+      "name": "Cooperative Society ",
+      "description": "Book Stall",
+      "floor": 0,
+      "lat": 15.4304518402,
+      "lng": 75.0149733206
   }
 ]
