@@ -11,129 +11,217 @@ function LeftMenu({
   onReset,
   onUseCurrent,
   instructions = [],
+  totalDistance = 0,
+  totalTime = 0,
 }) {
-  const [startText, setStartText] = useState("");
-  const [endText, setEndText] = useState("");
+
+  const [selectedPlace, setSelectedPlace] = useState(null);
 
   return (
-    <div className="w-full md:w-80 h-64 md:h-full bg-gray-900 border-r border-gray-700 flex flex-col text-white">
 
-      <div className="p-3 font-bold border-b border-gray-700 bg-black text-white">
+    <aside className="rounded-2xl border border-white/10 bg-black/20 p-4 shadow-lg shadow-black/30">
+      <div className="p-3 font-bold border-b border-gray-700 bg-black">
         Campus Map
       </div>
 
-      {/* INPUT AREA */}
-      <div className="p-2 flex flex-col gap-2">
 
-        <input
-          type="text"
-          placeholder="Start location"
-          value={start?.name || startText}
-          onChange={(e) => setStartText(e.target.value)}
-          className="border border-gray-600 bg-gray-800 text-white p-2 rounded"
-        />
+      <div className="p-3 space-y-4">
 
-        {/* DEST */}
-        <input
-          type="text"
-          placeholder="Destination"
-          value={end?.name || endText}
-          onChange={(e) => setEndText(e.target.value)}
-          className="border border-gray-600 bg-gray-800 text-white p-2 rounded"
-        />
+        {/* ---------------- DIRECTIONS ---------------- */}
 
-        <div className="flex gap-2">
+        <section className="bg-gray-800 rounded-xl p-3 border border-gray-700">
 
-          <button
-            onClick={onSwap}
-            className="bg-blue-700 text-white p-2 rounded hover:bg-blue-600"
-          >
-            Swap
-          </button>
+          <h2 className="font-semibold mb-2">
+            Directions
+          </h2>
 
-          <button
-            onClick={onReset}
-            className="bg-blue-700 text-white p-2 rounded hover:bg-blue-600"
-          >
-            Reset
-          </button>
+          <div className="text-xs mb-2">
 
-        </div>
-
-        <button
-          onClick={onUseCurrent}
-          className="bg-blue-700 text-white p-2 rounded hover:bg-blue-600"
-        >
-          Use Current Location
-        </button>
-
-      </div>
-
-      <div className="flex-1 overflow-auto border-t border-gray-700">
-
-        <div className="p-2 font-semibold text-white">
-          Places
-        </div>
-
-        {places.length === 0 && (
-          <div className="p-2 text-gray-400">
-            No places added
-          </div>
-        )}
-
-        {places.map((p) => (
-          <div
-            key={p.id}
-            className="p-2 border-b border-gray-600 cursor-pointer hover:bg-gray-700 text-white"
-            onClick={() => {
-              if (!start) setStart(p);
-              else if (!end) setEnd(p);
-            }}
-          >
-            {p.name}
-          </div>
-        ))}
-
-      </div>
-
-      {/* PATH DESCRIPTION */}
-
-        <div className="flex-1 min-h-32 border-t border-gray-700 p-3 text-sm overflow-y-auto bg-gray-800">
-
-            <div className="font-bold text-white text-base mb-3">
-                📍 Route
+            <div>
+              Start:
+              <span className="text-green-400 ml-1">
+                {start?.name || "—"}
+              </span>
             </div>
 
-            {instructions.length === 0 && (
-                <div className="text-gray-500 italic py-4">
-                No route selected
+            <div>
+              End:
+              <span className="text-red-400 ml-1">
+                {end?.name || "—"}
+              </span>
+            </div>
+
+          </div>
+
+
+          {/* buttons */}
+
+          <div className="flex gap-2 mb-2">
+
+            <button
+              onClick={() => {
+                setStart(null);
+                setEnd(null);
+              }}
+              className="flex-1 bg-gray-700 p-2 rounded text-xs"
+            >
+              Pick
+            </button>
+
+            <button
+              onClick={onSwap}
+              className="flex-1 bg-gray-700 p-2 rounded text-xs"
+            >
+              Swap
+            </button>
+
+            <button
+              onClick={onReset}
+              className="flex-1 bg-gray-700 p-2 rounded text-xs"
+            >
+              Reset
+            </button>
+
+          </div>
+
+
+          <button
+            onClick={onUseCurrent}
+            className="w-full bg-blue-700 p-2 rounded text-xs"
+          >
+            Use Current Location
+          </button>
+
+        </section>
+
+        {/* TOTAL */}
+
+        {instructions.length > 0 && (
+
+          <div className="bg-gray-900 p-2 rounded mb-3 text-xs">
+
+            <div>
+              Distance:
+              <span className="text-green-400 ml-1">
+                {totalDistance} m
+              </span>
+            </div>
+
+            <div>
+              Time:
+              <span className="text-yellow-400 ml-1">
+                {totalTime} min
+              </span>
+            </div>
+
+          </div>
+
+        )}
+
+        {/* ---------------- PLACE LIST ---------------- */}
+
+        <section className="bg-gray-800 rounded-xl p-3 border border-gray-700">
+
+          <h2 className="font-semibold mb-2">
+            Places
+          </h2>
+
+          <div className="grid grid-cols-2 gap-1">
+
+            {places.map((p) => (
+
+              <button
+                key={p.id}
+                onClick={() => {
+
+                  setSelectedPlace(p.id);
+
+                  if (!start) setStart(p);
+                  else if (!end) setEnd(p);
+
+                }}
+                className="text-xs bg-gray-700 rounded px-2 py-1 hover:bg-gray-600 text-left"
+              >
+                {p.name}
+              </button>
+
+            ))}
+
+          </div>
+
+        </section>
+
+
+
+        {/* ---------------- ROUTE ---------------- */}
+
+        <section className="bg-gray-800 rounded-xl p-3 border border-gray-700">
+
+          <h2 className="font-semibold mb-2">
+            Route
+          </h2>
+
+          {instructions.length === 0 && (
+            <div className="text-gray-400 text-xs">
+              No route selected
+            </div>
+          )}
+
+          {instructions.map((s, i) => (
+
+            <div
+              key={i}
+              className="bg-gray-700 p-2 rounded mb-2"
+            >
+
+              <div className="text-xs text-blue-400">
+                Step {i + 1}
+              </div>
+
+              <div className="text-sm">
+                {s.from} → {s.to}
+              </div>
+
+              {s.instruction && (
+                <div className="text-xs text-gray-400">
+                  {s.instruction}
                 </div>
-            )}
+              )}
 
-            {instructions.length > 0 && (
-                <div className="space-y-3">
-                    {instructions.map((s, i) => (
-                        <div key={i} className="bg-gray-700 p-2.5 rounded border-l-4 border-blue-500">
-                            <div className="font-semibold text-white flex items-center gap-2">
-                                <span className="text-blue-400">Step {i + 1}</span>
-                            </div>
-                            <div className="text-gray-200 mt-1">
-                                {s.from} <span className="text-blue-400">→</span> {s.to}
-                            </div>
-                            {s.instruction && (
-                                <div className="text-xs text-gray-400 mt-2 pl-2 border-l border-gray-600">
-                                    {s.instruction}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            )}
+            </div>
 
-        </div>
+          ))}
 
-    </div>
+        </section>
+
+
+
+        {/* ---------------- NOTES ---------------- */}
+
+        <section className="bg-gray-800 rounded-xl p-3 border border-gray-700">
+
+          <h2 className="font-semibold mb-2">
+            Notes
+          </h2>
+
+          <ul className="text-xs text-gray-300 list-disc pl-4">
+
+            <li>Select start & destination</li>
+            <li>Shortest path using Dijkstra</li>
+            <li>Swap to reverse</li>
+            <li>Reset to clear</li>
+
+          </ul>
+
+        </section>
+
+
+      </div>
+
+    </aside>
+
   );
+
 }
 
 export default LeftMenu;
