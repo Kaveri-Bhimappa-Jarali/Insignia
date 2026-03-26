@@ -1,7 +1,10 @@
-at path /admin
-only you can create the connection between the points
+/admin
+You can see the hole topology of the map
+which node are connected
 
-in /panel
-you can create placess and nodes
+and also you can connect the nodes
+and need to Copy past that info to the edges.json file from localstoragedata
 
-need to add some more and accorate paths
+/panel
+here you can add the placess and the internal nodes with the ditails
+
