@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import {
   GoogleMap,
   LoadScript,
@@ -29,34 +30,46 @@ const options = {
 
 const EDGES_KEY = "insignia_edges";
 
-const loadEdges = () => {
-  try {
-    const s = localStorage.getItem(EDGES_KEY);
-    if (!s) return edgesData;
-    return JSON.parse(s);
-  } catch {
-    return edgesData;
-  }
-};
-
 export default function AdminEdgeEditor() {
 
-  // ✅ load places & nodes from JSON
+  // ---------- clear localStorage on start ----------
+
+  useEffect(() => {
+
+    localStorage.removeItem(EDGES_KEY);
+
+  }, []);
+
+
+  // ---------- load JSON ----------
 
   const [placesState] = useState(placesData);
   const [nodesState] = useState(nodesData);
 
-  // ✅ edges from localStorage
-
-  const [edgesState, setEdgesState] = useState(loadEdges);
+  const [edgesState, setEdgesState] = useState(edgesData);
 
   const [selectedPoints, setSelectedPoints] = useState([]);
+
   const [edgeForm, setEdgeForm] = useState({});
+
   const [showEdgeForm, setShowEdgeForm] = useState(false);
 
   const allPoints = [...placesState, ...nodesState];
 
-  // ---------------- select points ----------------
+
+  // ---------- save edges ----------
+
+  useEffect(() => {
+
+    localStorage.setItem(
+      EDGES_KEY,
+      JSON.stringify(edgesState, null, 2)
+    );
+
+  }, [edgesState]);
+
+
+  // ---------- select points ----------
 
   const handlePointSelect = (p) => {
 
@@ -72,17 +85,19 @@ export default function AdminEdgeEditor() {
       if (selectedPoints[0].id === p.id) return;
 
       setSelectedPoints([selectedPoints[0], p]);
+
       setShowEdgeForm(true);
     }
   };
 
-  // ---------------- form ----------------
+
+  // ---------- form ----------
 
   const handleEdgeFormChange = (e) => {
 
     const { name, value } = e.target;
 
-    setEdgeForm((prev) => ({
+    setEdgeForm(prev => ({
       ...prev,
       [name]:
         name === "distance" || name === "time"
@@ -91,7 +106,8 @@ export default function AdminEdgeEditor() {
     }));
   };
 
-  // ---------------- save edge ----------------
+
+  // ---------- save edge ----------
 
   const handleEdgeSubmit = () => {
 
@@ -117,17 +133,15 @@ export default function AdminEdgeEditor() {
 
     setEdgesState(updated);
 
-    localStorage.setItem(
-      EDGES_KEY,
-      JSON.stringify(updated, null, 2)
-    );
-
     setSelectedPoints([]);
+
     setShowEdgeForm(false);
+
     setEdgeForm({});
   };
 
-  // ---------------- export ----------------
+
+  // ---------- export ----------
 
   const exportEdges = () => {
 
@@ -141,6 +155,7 @@ export default function AdminEdgeEditor() {
 
     alert("Edges copied");
   };
+
 
   // ================= UI =================
 
@@ -161,14 +176,48 @@ export default function AdminEdgeEditor() {
 
         <h3>Edge Editor</h3>
 
-        <p>
-          Click two markers to create edge
-        </p>
+        <p>Click two markers</p>
 
-        <p>
-          Selected:
-          {selectedPoints.map(p => p.name).join(" → ")}
-        </p>
+
+        {/* selected details */}
+
+        <div>
+
+          <b>Selected Points</b>
+
+          {selectedPoints.length === 0 && (
+            <div>No point</div>
+          )}
+
+          {selectedPoints.map((p, i) => (
+
+            <div
+              key={p.id}
+              style={{
+                marginTop: 8,
+                padding: 8,
+                background: "#222",
+              }}
+            >
+
+              <div>{i + 1}. {p.name}</div>
+
+              <div>ID: {p.id}</div>
+
+              <div>Type: {p.type}</div>
+
+              <div>Floor: {p.floor}</div>
+
+              <div>Lat: {p.lat}</div>
+
+              <div>Lng: {p.lng}</div>
+
+            </div>
+
+          ))}
+
+        </div>
+
 
         <button onClick={exportEdges}>
           Export
@@ -194,7 +243,7 @@ export default function AdminEdgeEditor() {
             options={options}
           >
 
-            {/* PLACES */}
+            {/* places */}
 
             {placesState.map(p => (
 
@@ -209,7 +258,8 @@ export default function AdminEdgeEditor() {
 
             ))}
 
-            {/* NODES */}
+
+            {/* nodes */}
 
             {nodesState.map(n => (
 
@@ -228,6 +278,7 @@ export default function AdminEdgeEditor() {
 
             ))}
 
+
             {/* selected line */}
 
             {selectedPoints.length === 2 && (
@@ -240,6 +291,7 @@ export default function AdminEdgeEditor() {
               />
 
             )}
+
 
             {/* edges */}
 
@@ -259,16 +311,12 @@ export default function AdminEdgeEditor() {
 
                 <Polyline
                   key={e.id}
-                  path={[
-                    a,
-                    b,
-                  ]}
+                  path={[a, b]}
                   options={{
                     strokeColor: "#00ff00",
                   }}
                 />
-
-              );
+                );
 
             })}
 
@@ -303,6 +351,12 @@ export default function AdminEdgeEditor() {
           />
 
           <input
+            name="direction"
+            placeholder="direction"
+            onChange={handleEdgeFormChange}
+          />
+
+          <input
             name="instruction"
             placeholder="instruction"
             onChange={handleEdgeFormChange}
@@ -325,4 +379,5 @@ export default function AdminEdgeEditor() {
     </div>
 
   );
+
 }
