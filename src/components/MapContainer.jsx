@@ -151,8 +151,8 @@ export default function MapContainer({
 
         {/* ---------- NODES (only visible when path OR admin) ---------- */}
 
-        {showPath &&
-            nodes.map((n) => (
+        {pathCoords.length > 0 &&
+          nodes.map((n) => (
                 <Marker
                     key={n.id}
                     position={{ lat: n.lat, lng: n.lng }}
@@ -186,33 +186,20 @@ export default function MapContainer({
 
         {/* ---------- PATH LINE ---------- */}
 
-        {showPath && pathCoords && pathCoords.length > 1 && (
+        {pathCoords && pathCoords.length > 1 && (
           <Polyline
-            key={`path-${Date.now()}`}
+            key="path-line"
             path={pathCoords}
             options={{
               strokeColor: "#00ff00",
               strokeWeight: 5,
-              icons: [
-                {
-                  icon: {
-                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-                    scale: 3,
-                    strokeColor: "#00ff00",
-                    fillColor: "#004cff",
-                    fillOpacity: 1,
-                  },
-                  offset: "0%",
-                  repeat: "40px",
-                },
-              ],
             }}
           />
         )}
 
         {/* ---------- PATH POINTS ---------- */}
 
-        {showPath && pathCoords.map((p, i) => (
+        {pathCoords && pathCoords.map((p, i) => (
           <Marker
             key={"path" + i}
             position={{ lat: p.lat, lng: p.lng }}
