@@ -27,6 +27,8 @@ export default function UserMap() {
     const [pathNames, setPathNames] = useState([]);
 
     const [instructions, setInstructions] = useState([]);
+    const [totalDistance, setTotalDistance] = useState(0);
+    const [totalTime, setTotalTime] = useState(0);
 
     const onSwap = () => {
     setStart(end);
@@ -98,12 +100,54 @@ export default function UserMap() {
         );
     };
 
+    const totalCalculate = (path, edges) => {
+
+        let dist = 0;
+        let time = 0;
+
+        if (!path || path.length < 2) {
+            setTotalDistance(0);
+            setTotalTime(0);
+            return;
+        }
+
+        for (let i = 0; i < path.length - 1; i++) {
+
+            const a = Number(path[i]);
+            const b = Number(path[i + 1]);
+
+            const edge = edges.find(
+                e =>
+                    (Number(e.from) === a && Number(e.to) === b) ||
+                    (Number(e.from) === b && Number(e.to) === a)
+            );
+
+            if (edge) {
+
+                dist += Number(edge.distance || 0);
+                time += Number(edge.time || 0);
+
+            }
+
+        }
+
+        setTotalDistance(dist);
+        setTotalTime(time);
+
+    };
+
     useEffect(() => {
         setEdges(edgesData);
     }, []);
 
     useEffect(() => {
         if (!start || !end) return;
+
+        console.log("START", start.id);
+        console.log("END", end.id);
+        console.log("EDGES", edges);
+        
+        console.log(buildGraph(places, nodes, edges));
 
         const graph = buildGraph(places, nodes, edges);
 
@@ -132,27 +176,41 @@ export default function UserMap() {
             )
         );
 
-   }, [start, end, edges]);
+        // calculate the total distance and time for the path
+        totalCalculate(result, edges);
+
+    }, [start, end, edges]);
 
     return (
-        <div className="h-screen w-screen overflow-hidden flex flex-col md:flex-row">
 
-        <LeftMenu
-            places={places}
-            start={start}
-            end={end}
-            setStart={setStart}
-            setEnd={setEnd}
-            path={pathNames}
-            instructions={instructions}
-            onSwap={onSwap}
-            onReset={onReset}
-            onUseCurrent={onUseCurrent}
-        />
+        <div className="h-screen w-screen bg-[#020617] text-white flex flex-col">
 
-        <div className="flex-1 h-full">
+            {/* HEADER */}
 
-            <MapContainer
+            <div className="p-4 border-b border-gray-800 shrink-0">
+
+            <h1 className="text-2xl font-bold">
+                SDMCET Campus Map
+            </h1>
+
+            <p className="text-sm text-gray-400">
+                Tap a pin to select start and destination locations.
+            </p>
+
+            </div>
+
+
+
+            {/* MAIN AREA */}
+
+            <div className="flex-1 flex flex-col lg:flex-row gap-4 p-4 overflow-hidden">
+
+
+            {/* MAP */}
+
+            <div className="flex-1 bg-gray-900 rounded-xl overflow-hidden">
+
+                <MapContainer
                 places={places}
                 nodes={nodes}
                 start={start}
@@ -160,10 +218,74 @@ export default function UserMap() {
                 setStart={setStart}
                 setEnd={setEnd}
                 pathCoords={pathCoords}
+                />
+
+            </div>
+
+
+
+            {/* RIGHT PANEL DESKTOP */}
+
+            <div className="hidden lg:flex w-[320px] flex-col overflow-hidden">
+
+                <div className="flex-1 overflow-y-auto">
+
+                {/* <LeftMenu
+                    places={places}
+                    start={start}
+                    end={end}
+                    setStart={setStart}
+                    setEnd={setEnd}
+                    path={pathNames}
+                    instructions={instructions}
+                    onSwap={onSwap}
+                    onReset={onReset}
+                    onUseCurrent={onUseCurrent}
+                /> */}
+                <LeftMenu
+                    places={places}
+                    start={start}
+                    end={end}
+                    setStart={setStart}
+                    setEnd={setEnd}
+                    path={pathNames}
+                    instructions={instructions}
+                    totalDistance={totalDistance}
+                    totalTime={totalTime}
+                    onSwap={onSwap}
+                    onReset={onReset}
+                    onUseCurrent={onUseCurrent}
+                />
+
+                </div>
+
+            </div>
+
+
+            </div>
+
+
+
+            {/* MOBILE PANEL */}
+
+            <div className="lg:hidden h-72 border-t border-gray-800 overflow-y-auto">
+
+            <LeftMenu
+                places={places}
+                start={start}
+                end={end}
+                setStart={setStart}
+                setEnd={setEnd}
+                path={pathNames}
+                instructions={instructions}
+                onSwap={onSwap}
+                onReset={onReset}
+                onUseCurrent={onUseCurrent}
             />
 
-        </div>
+            </div>
 
         </div>
+
     );
 }
