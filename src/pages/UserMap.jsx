@@ -15,7 +15,8 @@ export default function UserMap() {
 
     const [places] = useState(placesData);
     const [nodes] = useState(nodesData);
-    const [edges] = useState(edgesData);
+    // const [edges] = useState(edgesData);
+    const [edges, setEdges] = useState([]);
 
     const [start, setStart] = useState(null);
     const [end, setEnd] = useState(null);
@@ -98,6 +99,10 @@ export default function UserMap() {
     };
 
     useEffect(() => {
+        setEdges(edgesData);
+    }, []);
+
+    useEffect(() => {
         if (!start || !end) return;
 
         const graph = buildGraph(places, nodes, edges);
@@ -127,7 +132,7 @@ export default function UserMap() {
             )
         );
 
-    }, [start, end]);
+   }, [start, end, edges]);
 
     return (
         <div className="h-screen w-screen overflow-hidden flex flex-col md:flex-row">
