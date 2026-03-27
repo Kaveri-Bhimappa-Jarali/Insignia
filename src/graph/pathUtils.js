@@ -73,11 +73,15 @@ export function pathToInstructions(
         (Number(e.from) === b && Number(e.to) === a)
     );
 
-    result.push({
-      from: getName(a),
-      to: getName(b),
-      instruction: edge?.instruction || "",
-    });
+    const inst = edge?.instruction || edge?.direction || "";
+
+    if (inst) {
+      result.push({
+        from: getName(a),
+        to: getName(b),
+        instruction: inst,
+      });
+    }
 
   }
 

@@ -21,6 +21,7 @@ const options = {
   },
   disableDefaultUI: true,
   zoomControl: true,
+  mapTypeControl: true, // Enables switching between Map and Satellite
   mapTypeId: "satellite",
 };
 
@@ -128,7 +129,7 @@ export default function MapContainer({
                         handleMarkerClick(p);
                     }}
                 />
-                {selectedPlace === p.id && (
+                {/* {selectedPlace === p.id && (
                   <InfoWindow
                     position={{ lat: p.lat, lng: p.lng }}
                     onCloseClick={() => setSelectedPlace(null)}
@@ -147,20 +148,11 @@ export default function MapContainer({
                       )}
                     </div>
                   </InfoWindow>
-                )}
+                )} */}
             </div>
         ))}
 
-        {/* ---------- NODES (only visible when path OR admin) ---------- */}
-
-        {hasValidPath && pathCoords.length > 0 &&
-          nodes.map((n) => (
-                <Marker
-                    key={n.id}
-                    position={{ lat: n.lat, lng: n.lng }}
-                />
-            ))
-        }
+        {/* ---------- NODES (Removed from user view) ---------- */}
 
         {/* ---------- START MARKER ---------- */}
 
@@ -197,20 +189,7 @@ export default function MapContainer({
           }}
         />
 
-        {/* ---------- PATH POINTS ---------- */}
-
-        {hasValidPath && pathCoords && pathCoords.length > 0 && pathCoords.map((p, i) => (
-          <Marker
-            key={`path-point-${i}`}
-            position={{ lat: p.lat, lng: p.lng }}
-            icon={{
-              url:
-                "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            }}
-          />
-        ))}
-
-        {/* ---------- ANIMATED MARKER ---------- */}
+        {/* ---------- PATH POINTS (Hidden as per user request to only show required nodes) ---------- */}
 
         {hasValidPath && animatedPosition && (
           <Marker

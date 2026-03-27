@@ -223,7 +223,7 @@ export default function UserMap() {
 
             {/* RIGHT PANEL DESKTOP */}
 
-            <div className="hidden lg:flex w-[320px] flex-col overflow-hidden">
+            <div className="hidden lg:flex w-[260px] flex-col overflow-hidden">
 
                 <div className="flex-1 overflow-y-auto">
 
