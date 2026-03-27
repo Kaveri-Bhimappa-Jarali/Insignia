@@ -289,5 +289,212 @@
   "floor": 0,
   "lat": 15.4303338927,
   "lng": 75.0151328787
-  }
+  },
+  {
+  "id": 510,
+  "type": "node",
+  "name": "Security",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4307201167,
+  "lng": 75.0145681042
+},
+{
+  "id": 540,
+  "type": "node",
+  "name": "Up Steps",
+  "description": "",
+  "floor": 1,
+  "lat": 15.4308041462,
+  "lng": 75.014539941
+},
+{
+  "id": 543,
+  "type": "node",
+  "name": "CSE Entrance",
+  "description": "",
+  "floor": 1,
+  "lat": 15.4306761628,
+  "lng": 75.0145962674
+},
+{
+  "id": 544,
+  "type": "node",
+  "name": "Main Seminar Block",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4305340613,
+  "lng": 75.0146797265
+},
+{
+  "id": 545,
+  "type": "node",
+  "name": "Seminar hall cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4304901074,
+  "lng": 75.0147280063
+},
+{
+  "id": 546,
+  "type": "node",
+  "name": "Auditorium Entrance 2",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4305379396,
+  "lng": 75.0147575106
+},
+{
+  "id": 547,
+  "type": "node",
+  "name": "Auditorium Entrance 1",
+  "description": "",
+  "floor": -1,
+  "lat": 15.4307822716,
+  "lng": 75.0145375695
+},
+{
+  "id": 548,
+  "type": "node",
+  "name": "Auditorium block",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4304862291,
+  "lng": 75.0146797265
+},
+{
+  "id": 549,
+  "type": "node",
+  "name": "Auditorium Block",
+  "description": "",
+  "floor": -1,
+  "lat": 15.4306868211,
+  "lng": 75.0145249601
+},
+{
+  "id": 550,
+  "type": "node",
+  "name": "CSE, ISE, EEE Junction",
+  "description": "",
+  "floor": 1,
+  "lat": 15.430730775,
+  "lng": 75.0145423944
+},
+{
+  "id": 551,
+  "type": "node",
+  "name": "Class Junction",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4307657003,
+  "lng": 75.0144402999
+},
+{
+  "id": 552,
+  "type": "node",
+  "name": "EEE, ECE Junction",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4307540655,
+  "lng": 75.0137938876
+},
+{
+  "id": 553,
+  "type": "node",
+  "name": "Steps",
+  "description": "",
+  "floor": 1,
+  "lat": 15.4307992913,
+  "lng": 75.0137699182
+},
+{
+  "id": 554,
+  "type": "node",
+  "name": "ECE Entrance",
+  "description": "",
+  "floor": 1,
+  "lat": 15.4307618012,
+  "lng": 75.0137578483
+},
+{
+  "id": 555,
+  "type": "node",
+  "name": "Library Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4304054508,
+  "lng": 75.0143686719
+},
+{
+  "id": 556,
+  "type": "node",
+  "name": "MBA Entrance Cross",
+  "description": "",
+  "floor": 1,
+  "lat": 15.4303614968,
+  "lng": 75.0143311209
+},
+{
+  "id": 557,
+  "type": "node",
+  "name": "Library Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4303317632,
+  "lng": 75.0143083222
+},
+{
+  "id": 558,
+  "type": "node",
+  "name": "Boys Hostel Block",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4289941989,
+  "lng": 75.0154454818
+},
+{
+  "id": 559,
+  "type": "node",
+  "name": "Mess Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4287955427,
+  "lng": 75.0153775325
+},
+{
+  "id": 560,
+  "type": "node",
+  "name": "Ground Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4283106725,
+  "lng": 75.015410315
+},
+{
+  "id": 561,
+  "type": "node",
+  "name": "Library Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4302523618,
+  "lng": 75.0143057201
+},
+{
+  "id": 562,
+  "type": "node",
+  "name": "Library Mess Corss",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4298327079,
+  "lng": 75.0141606056
+},
+{
+  "id": 563,
+  "type": "node",
+  "name": "Indoor Cross",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4298317569,
+  "lng": 75.0138332379
+}
 ]

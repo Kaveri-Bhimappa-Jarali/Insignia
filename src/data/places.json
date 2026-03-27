@@ -167,8 +167,8 @@
     "name": "ISE Department",
     "description": "Information Science and Engineering Department",
     "floor": 2,
-    "lat": 15.430735790347253,
-    "lng": 75.01413251916007
+    "lat": 15.430819302266434, 
+    "lng": 75.01413756219642
   },
   {
     "id": 120,
@@ -376,5 +376,32 @@
       "floor": 0,
       "lat": 15.4304518402,
       "lng": 75.0149733206
-  }
+  },
+  {
+  "id": 16,
+  "type": "place",
+  "name": "Auditorium",
+  "description": "Auditorium of SDMCET",
+  "floor": -1,
+  "lat": 15.4304411962,
+  "lng": 75.0144109662
+},
+{
+  "id": 17,
+  "type": "place",
+  "name": "EEE Department",
+  "description": "Electronics and Electrical Engineering Department",
+  "floor": 0,
+  "lat": 15.430790861525653, 
+  "lng": 75.01363598910656
+},
+{
+  "id": 18,
+  "type": "place",
+  "name": "Indoor Block",
+  "description": "",
+  "floor": 0,
+  "lat": 15.4293175223,
+  "lng": 75.013871981
+}
 ]
