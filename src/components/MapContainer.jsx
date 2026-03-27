@@ -42,10 +42,11 @@ export default function MapContainer({
   setStart,
   setEnd,
   pathCoords = [],
+  renderKey = 0,
+  hasValidPath = false,
 }) {
   const [animatedPosition, setAnimatedPosition] = useState(null);
   const [direction, setDirection] = useState(0); // Track direction for rotation
-  const [showPath, setShowPath] = useState(false); // Track if path should be shown
   const [selectedPlace, setSelectedPlace] = useState(null); // Track which place info is shown
 
   // Animate marker along path
@@ -53,11 +54,8 @@ export default function MapContainer({
     if (pathCoords.length < 2) {
       setAnimatedPosition(null);
       setDirection(0);
-      setShowPath(false);
       return;
     }
-
-    setShowPath(true);
 
     let animationFrame;
     let progress = 0;
@@ -103,6 +101,10 @@ export default function MapContainer({
       setStart(place);
     } else if (!end) {
       setEnd(place);
+    } else {
+      // Both start and end are set, reset and start fresh
+      setStart(place);
+      setEnd(null);
     }
   };
 
@@ -151,7 +153,7 @@ export default function MapContainer({
 
         {/* ---------- NODES (only visible when path OR admin) ---------- */}
 
-        {pathCoords.length > 0 &&
+        {hasValidPath && pathCoords.length > 0 &&
           nodes.map((n) => (
                 <Marker
                     key={n.id}
@@ -186,9 +188,9 @@ export default function MapContainer({
 
         {/* ---------- PATH LINE ---------- */}
 
-        {pathCoords && pathCoords.length > 1 && (
+        {hasValidPath && pathCoords && pathCoords.length > 1 && (
           <Polyline
-            key="path-line"
+            key={`polyline-${renderKey}`}
             path={pathCoords}
             options={{
               strokeColor: "#00ff00",
@@ -199,9 +201,9 @@ export default function MapContainer({
 
         {/* ---------- PATH POINTS ---------- */}
 
-        {pathCoords && pathCoords.map((p, i) => (
+        {hasValidPath && pathCoords && pathCoords.length > 0 && pathCoords.map((p, i) => (
           <Marker
-            key={"path" + i}
+            key={`path-point-${renderKey}-${i}`}
             position={{ lat: p.lat, lng: p.lng }}
             icon={{
               url:
@@ -212,7 +214,7 @@ export default function MapContainer({
 
         {/* ---------- ANIMATED MARKER ---------- */}
 
-        {animatedPosition && (
+        {hasValidPath && animatedPosition && (
           <Marker
             position={animatedPosition}
             title="Navigation"

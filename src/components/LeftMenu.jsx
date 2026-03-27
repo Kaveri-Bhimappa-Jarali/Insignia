@@ -59,10 +59,7 @@ function LeftMenu({
           <div className="flex gap-2 mb-2">
 
             <button
-              onClick={() => {
-                setStart(null);
-                setEnd(null);
-              }}
+              onClick={onReset}
               className="flex-1 bg-gray-700 p-2 rounded text-xs"
             >
               Pick
@@ -138,6 +135,11 @@ function LeftMenu({
 
                   if (!start) setStart(p);
                   else if (!end) setEnd(p);
+                  else {
+                    // Both start and end are set, reset and start fresh
+                    setStart(p);
+                    setEnd(null);
+                  }
 
                 }}
                 className="text-xs bg-gray-700 rounded px-2 py-1 hover:bg-gray-600 text-left"

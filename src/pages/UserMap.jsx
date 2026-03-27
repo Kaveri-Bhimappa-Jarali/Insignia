@@ -21,14 +21,14 @@ export default function UserMap() {
     const [start, setStart] = useState(null);
     const [end, setEnd] = useState(null);
 
-    const [path, setPath] = useState([]);
-
     const [pathCoords, setPathCoords] = useState([]);
     const [pathNames, setPathNames] = useState([]);
 
     const [instructions, setInstructions] = useState([]);
     const [totalDistance, setTotalDistance] = useState(0);
     const [totalTime, setTotalTime] = useState(0);
+    const [renderKey, setRenderKey] = useState(0); // Force polyline complete remount
+    const [hasValidPath, setHasValidPath] = useState(false); // Track if path is calculated
 
     const onSwap = () => {
     setStart(end);
@@ -38,10 +38,10 @@ export default function UserMap() {
     const onReset = () => {
         setStart(null);
         setEnd(null);
-        setPath([]);
         setPathCoords([]);
         setPathNames([]);
         setInstructions([]);
+        setHasValidPath(false);
     };
 
     const onUseCurrent = () => {
@@ -140,46 +140,41 @@ export default function UserMap() {
         setEdges(edgesData);
     }, []);
 
+    // Clear and recalculate path when start or end changes
     useEffect(() => {
+        // Step 1: Immediately clear ALL path data and set hasValidPath to false
+        setPathCoords([]);
+        setPathNames([]);
+        setInstructions([]);
+        setTotalDistance(0);
+        setTotalTime(0);
+        setHasValidPath(false); // Mark path as invalid
+        
+        // Increment render key to force polyline complete unmount
+        setRenderKey(prev => prev + 1);
+        
+        // Step 2: If both start and end exist, calculate new path
         if (!start || !end) return;
 
-        console.log("START", start.id);
-        console.log("END", end.id);
-        console.log("EDGES", edges);
-        
-        console.log(buildGraph(places, nodes, edges));
+        // Use a setTimeout to allow the clearing to fully render before calculating new path
+        const timer = setTimeout(() => {
+            console.log("START", start.id);
+            console.log("END", end.id);
+            console.log("EDGES", edges);
+            
+            const graph = buildGraph(places, nodes, edges);
+            const result = dijkstra(graph, start.id, end.id);
 
-        const graph = buildGraph(places, nodes, edges);
+            setPathCoords(pathToCoords(result, places, nodes));
+            setPathNames(pathToNames(result, places, nodes));
+            setInstructions(pathToInstructions(result, edges, places, nodes));
+            totalCalculate(result, edges);
+            setHasValidPath(true); // Mark path as valid once calculated
+        }, 100); // Increased delay to ensure clear renders
 
-        const result = dijkstra(
-            graph,
-            start.id,
-            end.id
-        );
+        return () => clearTimeout(timer);
 
-        setPath(result);
-
-        setPathCoords(
-            pathToCoords(result, places, nodes)
-        );
-
-        setPathNames(
-            pathToNames(result, places, nodes)
-        );
-
-        setInstructions(
-            pathToInstructions(
-            result,
-            edges,
-            places,
-            nodes
-            )
-        );
-
-        // calculate the total distance and time for the path
-        totalCalculate(result, edges);
-
-    }, [start, end, edges]);
+    }, [start, end, edges, places, nodes]);
 
     return (
 
@@ -218,6 +213,8 @@ export default function UserMap() {
                 setStart={setStart}
                 setEnd={setEnd}
                 pathCoords={pathCoords}
+                renderKey={renderKey}
+                hasValidPath={hasValidPath}
                 />
 
             </div>
