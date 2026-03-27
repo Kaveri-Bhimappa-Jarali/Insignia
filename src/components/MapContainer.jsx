@@ -188,22 +188,20 @@ export default function MapContainer({
 
         {/* ---------- PATH LINE ---------- */}
 
-        {hasValidPath && pathCoords && pathCoords.length > 1 && (
-          <Polyline
-            key={`polyline-${renderKey}`}
-            path={pathCoords}
-            options={{
-              strokeColor: "#00ff00",
-              strokeWeight: 5,
-            }}
-          />
-        )}
+        <Polyline
+          path={hasValidPath && pathCoords ? pathCoords : []}
+          options={{
+            strokeColor: "#00ff00",
+            strokeWeight: 5,
+            visible: Boolean(hasValidPath && pathCoords && pathCoords.length > 1)
+          }}
+        />
 
         {/* ---------- PATH POINTS ---------- */}
 
         {hasValidPath && pathCoords && pathCoords.length > 0 && pathCoords.map((p, i) => (
           <Marker
-            key={`path-point-${renderKey}-${i}`}
+            key={`path-point-${i}`}
             position={{ lat: p.lat, lng: p.lng }}
             icon={{
               url:
