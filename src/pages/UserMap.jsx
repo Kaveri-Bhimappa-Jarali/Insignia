@@ -183,7 +183,12 @@ export default function UserMap() {
             {/* HEADER */}
 
             <div className="p-4 border-b border-gray-800 shrink-0">
-
+            <button
+  onClick={() => window.location.href = "https://sdmcetinsignia.com/"}
+  className="px-3 py-1 text-sm rounded-lg bg-blue-500 hover:bg-blue-600 transition"
+>
+  Back
+</button>
             <h1 className="text-2xl font-bold">
                 SDMCET Campus Map
             </h1>
