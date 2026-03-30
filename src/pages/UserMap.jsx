@@ -275,6 +275,8 @@ export default function UserMap() {
                 setEnd={setEnd}
                 path={pathNames}
                 instructions={instructions}
+                totalDistance={totalDistance}
+                totalTime={totalTime}
                 onSwap={onSwap}
                 onReset={onReset}
                 onUseCurrent={onUseCurrent}
